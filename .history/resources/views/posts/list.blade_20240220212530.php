@@ -37,6 +37,7 @@
         </container>
     </div>
 </x-app-layout>
+
 <script>
     const swalWithBootstrapButtons = Swal.mixin({
         customClass: {

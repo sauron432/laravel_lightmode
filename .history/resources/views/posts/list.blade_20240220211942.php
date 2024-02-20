@@ -37,6 +37,7 @@
         </container>
     </div>
 </x-app-layout>
+
 <script>
     const swalWithBootstrapButtons = Swal.mixin({
         customClass: {
@@ -46,7 +47,7 @@
         buttonsStyling: false
     });
     $(".delete-button").click(function() {
-        let postid = $(this).attr('data-id');
+        let postid=$(this).attr('data-id');
         swalWithBootstrapButtons.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -58,18 +59,21 @@
         }).then((result) => {
             if (result.isConfirmed) {
                 $.ajax({
-                    url: '/admin/post/delete/' + postid,
-                    success: function(result) {
+                    url:'/admin/post/delete/' + postid,
+                    success:function(result)
+                    {
                         let message = JSON.parse(result);
-                        if (message.status) {
+                        if(message.status)
+                        {
                             swalWithBootstrapButtons.fire({
                                 title: "Deleted!",
                                 text: message.message,
                                 icon: "success"
-                            }).then((result) => {
-                                location.reload();
                             });
-                        } else {
+                        }
+                        window.reload();/
+                        else
+                        {
                             swalWithBootstrapButtons.fire({
                                 title: "Cancelled",
                                 text: message.message,
@@ -80,12 +84,14 @@
                 })
             } else if (
                 result.dismiss === Swal.DismissReason.cancel
-            ) {}
+            ) {
+            }
         });
     });
     $(document).ready(function() {
         new DataTable('#postTable');
-        if ($('#success').val() != '') {
+        if ($('#success').val() != '') 
+        {
             Swal.fire({
                 position: "bottom-end",
                 icon: "success",
@@ -112,6 +118,6 @@
         //         timer: 2000
         //     });
         // }
-
+        
     });
 </script>

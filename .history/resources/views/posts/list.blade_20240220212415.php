@@ -37,6 +37,7 @@
         </container>
     </div>
 </x-app-layout>
+
 <script>
     const swalWithBootstrapButtons = Swal.mixin({
         customClass: {
@@ -65,14 +66,15 @@
                             swalWithBootstrapButtons.fire({
                                 title: "Deleted!",
                                 text: message.message,
+                                timer: 2000,
                                 icon: "success"
-                            }).then((result) => {
-                                location.reload();
                             });
+                            location.reload();
                         } else {
                             swalWithBootstrapButtons.fire({
                                 title: "Cancelled",
                                 text: message.message,
+                                timer: 2000,
                                 icon: "error"
                             });
                         }
