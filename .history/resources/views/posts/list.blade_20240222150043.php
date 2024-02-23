@@ -1,8 +1,3 @@
-<style>
-    .swal2-html-container{
-        color:white;
-    }
-</style>
 <x-app-layout>
     <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
         {{ __('Posts') }}
@@ -34,7 +29,6 @@
                             <a href="{{ route('post.edit', ['postid' => $post->id]) }}"
                                 class="btn btn-primary mb-4">Edit</a>
                             <span class="btn btn-danger mb-4 delete-button" data-id={{ $post->id }}>Delete</span>
-                            <a href="{{ route('post.viewpost',['postid' => $post->id]) }}" class="btn btn-danger mb-">Add Comment</a>
                         </td>
                     </tr>
                 @endforeach
@@ -75,7 +69,6 @@
                             }).then((result) => {
                                 location.reload();
                             });
-                            window.location.href = "/admin/post/list/";
                         } else {
                             swalWithBootstrapButtons.fire({
                                 title: "Cancelled",
@@ -119,5 +112,6 @@
         //         timer: 2000
         //     });
         // }
+
     });
 </script>

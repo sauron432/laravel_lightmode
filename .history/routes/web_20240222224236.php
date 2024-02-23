@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/', function () {
+    return view('welcome');
+});
 /* This line of code is defining a GET route for the root URL ('/') of the application. When a user
 accesses the root URL, it will call the 'index' method of the 'HomeController' class. Additionally,
 the route is given the name 'home' which can be used to reference this route in the application. */

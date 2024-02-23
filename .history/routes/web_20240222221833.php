@@ -14,10 +14,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-/* This line of code is defining a GET route for the root URL ('/') of the application. When a user
-accesses the root URL, it will call the 'index' method of the 'HomeController' class. Additionally,
-the route is given the name 'home' which can be used to reference this route in the application. */
 Route::get('/', [HomeController::class, 'index'])->name('home');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -34,9 +32,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/post/edit/{postid}', [PostController::class, 'edit'])->name('post.edit');
     Route::put('/admin/post/edit/{postid}', [PostController::class, 'update'])->name('post.update');
     Route::get('/admin/post/delete/{postid}', [PostController::class, 'destroy'])->name('post.destroy');
-    Route::get('/admin/post/viewpost/{postid}', [PostController::class, 'viewpost'])->name('post.viewpost');
-    Route::post('/admin/post/addComment', [PostController::class, 'commentStore'])->name('comment.store');
-    //home
 });
 
 require __DIR__.'/auth.php';

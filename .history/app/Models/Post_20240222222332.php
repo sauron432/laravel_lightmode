@@ -12,8 +12,4 @@ class post extends Model
     use SoftDeletes;
     protected $fillable = ['title','description'];
     //protected $guarded = [];
-    public function comment()
-    {
-        return $this->hasMany(Comment::class, 'post_id', 'id');
-    }
 }

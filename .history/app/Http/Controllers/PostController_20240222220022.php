@@ -1,7 +1,6 @@
 <?php
 namespace App\Http\Controllers;
 use App\Models\post;
-use App\Models\comment;
 use Illuminate\Http\Request;
 class PostController extends Controller
 {

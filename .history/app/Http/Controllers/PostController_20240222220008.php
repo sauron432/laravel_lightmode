@@ -1,7 +1,6 @@
 <?php
 namespace App\Http\Controllers;
 use App\Models\post;
-use App\Models\comment;
 use Illuminate\Http\Request;
 class PostController extends Controller
 {
@@ -87,20 +86,6 @@ class PostController extends Controller
         return view('posts.comment',[
             'post' =>  $post[0],
         ]);
-    }
-    public function commentStore(Request $request){
-        $request->validate([
-            'comment' =>['required'],
-        ]);
-        try{
-            Comment::create([
-                'comment' => $request->comment,
-                'post_id' => $request->post_id,
-            ]);
-            return redirect()->route('post.viewpost')->with('success', 'Commented successfully');
-        }catch(\Exception $e){
-            return redirect()->back()->withInput()->withErrors(['error' => 'There is an issue making post. Please contact admin']);
-        }
     }
 }
 ?>
