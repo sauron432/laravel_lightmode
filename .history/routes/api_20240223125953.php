@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -19,5 +19,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::middleware('auth')->group(function(){
-    Route::post('/admin/post/addComment',[HomeController::class,'commentStore'])->name('comment.store');
-});
+    Route::post('/admin/post/addComment',[HomeController::ckass,'commentStore'])->name('comment.store');
+}
