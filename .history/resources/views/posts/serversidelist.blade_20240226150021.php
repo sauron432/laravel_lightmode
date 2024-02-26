@@ -1,0 +1,1 @@
+resources/views/posts/list.blade.php

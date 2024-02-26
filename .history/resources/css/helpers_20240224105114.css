@@ -1,0 +1,15 @@
+
+.comment-area{
+    margin-bottom: 1rem;
+}
+.comment{
+    background-color: hsl(0 0% 97%);
+    border-radius: 1rem;
+    padding: 0.5em 1em;
+}
+
+.comment-area--title{
+    font-weight: 500;
+    color: #aaa;
+    margin-bottom: 0.25em;
+}
